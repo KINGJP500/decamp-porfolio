@@ -52,8 +52,8 @@ puts "5 blog posts created"
     Ipsum passages, and more recently with desktop
     publishing software like Aldus PageMaker including
     versions of Lorem Ipsum.",
-    main_image: "http://placeholder.it/600x400",
-    thumb_image: "http://placeholder.it/350x150"
+    main_image: "http://via.placeholder.com/600x400",
+    thumb_image: "http://via.placeholder.com/350x150"
   )
 end
 
