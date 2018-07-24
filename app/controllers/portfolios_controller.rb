@@ -7,18 +7,20 @@ class PortfoliosController < ApplicationController
   end
   def new
     @portfolio_item = Portfolio.new
+    3.times { @portfolio_item.technologies.build }
   end
 
   def create
-      @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
+      @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body,
+        technologies_attributes: [:name]))
 
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: 'Blog was successfully created.' }
-        format.json { render :show, status: :created, location: @blog }
+        #format.json { render :show, status: :created, location: @blog }
       else
         format.html { render :new }
-        format.json { render json: @portfolio_item.errors, status: :unprocessable_entity }
+        #format.json { render json: @portfolio_item.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -32,10 +34,10 @@ class PortfoliosController < ApplicationController
     respond_to do |format|
       if @portfolio_item.update(params.require(:portfolio).permit(:title, :subtitle, :body))
         format.html { redirect_to portfolios_path, notice: 'This record was successfully updated.' }
-        format.json { render :show, status: :ok, location: @blog }
+        #format.json { render :show, status: :ok, location: @blog }
       else
         format.html { render :edit }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
+        #format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,7 +55,7 @@ class PortfoliosController < ApplicationController
      #redirect
     respond_to do |format|
       format.html { redirect_to portfolio_url, notice: 'Post was removed.'}
-      format.json { head :no_content }
+      #format.json { head :no_content }
     end
   end
 
