@@ -3,5 +3,5 @@ class ApplicationController < ActionController::Base
     #The session include file
     include SetSource
     include CurrentUserConcern 
-    
+    include DefaultPageContent
 end
