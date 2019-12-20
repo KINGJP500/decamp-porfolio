@@ -59,3 +59,6 @@ gem 'devise', '~> 4.5'
 
 # bootstrap stylesheet file
 gem 'bootstrap', '~> 4.4.1'
+gem 'rake', '12.3.1'
+
+gem 'devcamp_view_tools_example', git: 'https://github.com/KINGJP500/devcamp_view_tools_example'
