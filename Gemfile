@@ -62,3 +62,4 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'rake', '12.3.1'
 
 gem 'devcamp_view_tools_example', '~> 0.1.0'
+gem 'petergate', '~> 2.0', '>= 2.0.1'
